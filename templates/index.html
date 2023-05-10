@@ -1,57 +1,137 @@
-// template/index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="index.css">
     <style>
-        audio{
-        min-width: 400px;
-        height: auto;
-        object-fit: inherit;
-    }
+                * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            place-content: center;
+            place-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .row h2 {
+            text-align: center;
+
+        }
+
+        h1 {
+            background-color: rgb(244, 220, 179);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+
+        input[type="file"] {
+            padding: 20px;
+            background-color: palegreen;
+            border-radius: 20px;
+            
+            margin-bottom: 20px;
+        }
+
+
+        input[type="submit"] {
+            padding: 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: palegoldenrod;
+            
+
+        }
+        input[type="submit"]:hover {
+            cursor: pointer;
+            background-color: rgb(233, 222, 103);
+        }
+
+        input[type="file"]:hover {
+            cursor: pointer;
+            background-color: rgb(233, 222, 103);
+        }
+
+        .output {
+            width: 500px;
+            min-height: 450px;
+            padding: 16px;
+            background-color: palegoldenrod;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            border-radius: 16px;
+            text-align: justify;
+        }
+
+        #output-text {
+            margin-top: 16px;
+        }
     </style>
     <title>Madhur Dhwani</title>
 </head>
 <body>
-    <p>Upload files</p>
+    <h1>
+        {% if filename %}
+            Transcripted text
+        {% else %}
+            Upload file here 
+        {% endif %}
+
+    </h1>
     <div class="container">
         <div class="row">
-            <h2>Select a file to upload</h2>
-            <p>
+            
+            <!-- <p >
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
-                        <ul>
-                            {% for message in messages %}
-                                <li>{{message}}</li>
-                            {% endfor %}
+                    <ul>
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
                         </ul>
                     {% endif %}
                 {% endwith %}
-            </p>  
+            </p>   -->
             
+           
 
             {% if filename %}
-               
-                {% print("in file name tag to display audio") %}
-                {% print(url) %}
                 <!-- url_for(display_file, filename = filename) -->
-                {{ url }}
-                <div>
-                    <audio src="test_1.mp3" controls preload="auto">audio</audio>
+                <div class="output">
+                    <audio src="{{ url }}" controls preload="auto">audio</audio>
+                    {% if text : %}
+                    
+                    <p id="output-text">{{ text }}</p>
+                    {% endif %}
                 </div>
             {% endif %}
+
+
+
             
-            <form action="/" method="POST" enctype="multipart/form-data">
-                <p>
-                    <input type="file" name="file" id="" autocomplete="off" required>
-                </p>
-                <audio src="static/uploads/test_1.mp3" controls></audio>
-                <p>
-                    <input type="submit" value="Submit">
-                </p>
-            </form>
+            {% if not text : %}
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <p>
+                        <input type="file" name="file" id="" autocomplete="off" required>
+                    </p>
+                    
+                    <p>
+                        <input type="submit" value="Submit">
+                    </p>
+                </form>
+            {% endif %}
+
         </div>
     </div>
 </body>
