@@ -1,0 +1,7 @@
+numba
+numpy
+torch
+tqdm
+more-itertools
+tiktoken==0.3.3
+flask==2.3.2
