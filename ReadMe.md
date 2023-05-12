@@ -46,3 +46,5 @@ Welcome to our audio to text converter! This tool is designed to make your life 
 
 ### References 
 - [] You can refer to openai-whispers official documentation --> `https://github.com/openai/whisper`
+
+- [] You can use timestamps for task 3
