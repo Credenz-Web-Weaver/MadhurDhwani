@@ -46,6 +46,5 @@ pip install -r requirements.txt
 - [ ] Add the functionality to copy text though copy icon after transcripting.
 
 ### References 
-- [ ] You can refer to openai-whispers official documentation --> `https://github.com/openai/whisper`
-
+- [ ] You can refer to openai-whispers official documentation --> <a href="https://github.com/openai/whisper" target="_blank">`https://github.com/openai/whisper`</a>
 - [ ] You can use timestamps for task 3
