@@ -12,21 +12,21 @@ Welcome to our audio to text converter! This tool is designed to make your life 
 ### Installation 
 
 - Create virtual environment using 
-
-    python -m venv venv
-
+```
+python -m venv venv
+```
 - Initialize the empty git repository using 
-
-    git init 
-
+```
+git init 
+```
 - Clone the git repository using 
-
-    git clone 
-
+```
+git clone 
+```
 - Install all the dependancies using 
-
-    pip install -r requirements.txt
-
+```
+pip install -r requirements.txt
+```
 
 ### About 
 - `./templates`
@@ -38,13 +38,14 @@ Welcome to our audio to text converter! This tool is designed to make your life 
 
 ### What you can do 
 
-- [] Improve the UI 
-- [] Add a *loader* till the audio gets processed 
-- [] Add a text highlight feature while replaying the audio after transcription 
-- [] Divide the longer audio inputs into chunks and output the complete transcription at end
-- [] Add support for multiple languages, as it currenty processes only `English`.
+- [ ] Improve the UI 
+- [ ] Add a *loader* till the audio gets processed 
+- [ ] Add a text highlight feature while replaying the audio after transcription 
+- [ ] Divide the longer audio inputs into chunks and output the complete transcription at end
+- [ ] Add support for multiple languages, as it currenty processes only `English`.
+- [ ] Add the functionality to copy text though copy icon after transcripting.
 
 ### References 
-- [] You can refer to openai-whispers official documentation --> `https://github.com/openai/whisper`
+- [ ] You can refer to openai-whispers official documentation --> `https://github.com/openai/whisper`
 
-- [] You can use timestamps for task 3
+- [ ] You can use timestamps for task 3
